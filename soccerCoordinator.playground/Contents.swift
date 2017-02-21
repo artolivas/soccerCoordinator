@@ -158,15 +158,21 @@ while sortedNonExperiencedPlayer > 0 {
 }
 // Sending out letters to Guardians
 
-func teamLetterFor(array: [[String : AnyCollection<Any>]], team: String, date: String) {
-    var teamLetters: [String] = []
-    var playerName: String
-    var playerGuardians: String
-    var teamCounter: Int = 0
-    while teamCounter < array.count {
-        playerName = array[teamCounter]["Name"] as! String
-        playerGuardians = array[teamCounter]["Guardian"] as! String
-        teamLetters.append("Dear \(playerGuardians): We would like to welcome you and \(playerName) as the newest members of \(team). Please note that the first practice will be on \(date).")
-        teamCounter += 1
-    }
-    return teamLetters
+for player in teamShark {
+    let guardian = player["guardians"]!
+    let name = player["name"]!
+    print("Hello \(guardian)! \(name) has been placed on Team Shark! The first team practice will be in March 17th at 3pm. Dust off your cleats and see you on the pitch! Sincerely, Coach")
+}
+
+for player in teamRaptor {
+    let guardian = player["guardians"]!
+    let name = player["name"]!
+    print("Hello \(guardian)! \(name) has been placed on Team Raptor! The first team practice will be in March 17th at 3pm. Dust off your cleats and see you on the pitch! Sincerely, Coach")
+}
+
+for player in teamDragon {
+    let guardian = player["guardians"]!
+    let name = player["name"]!
+    print("Hello \(guardian)! \(name) has been placed on Team Dragon! The first team practice will be in March 17th at 3pm. Dust off your cleats and see you on the pitch! Sincerely, Coach")
+}
+
